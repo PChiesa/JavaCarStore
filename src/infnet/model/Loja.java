@@ -13,6 +13,13 @@ public class Loja {
     private ArrayList<Carro> estoqueCarros;
     private ArrayList<Motocicleta> estoqueMotocicletas;
 
+    //Construtor
+    public Loja(String nome, String endereco) {
+        this.endereco = endereco;
+        this.nome = nome;
+        this.estoqueCarros = new ArrayList<Carro>();
+        this.estoqueMotocicletas = new ArrayList<Motocicleta>();
+    }
 
     //Gets e Sets
     public String getEndereco() {
@@ -35,15 +42,7 @@ public class Loja {
         return estoqueCarros;
     }
 
-    public void setEstoqueCarros(ArrayList<Carro> estoqueCarros) {
-        this.estoqueCarros = estoqueCarros;
-    }
-
     public ArrayList<Motocicleta> getEstoqueMotocicletas() {
         return estoqueMotocicletas;
-    }
-
-    public void setEstoqueMotocicletas(ArrayList<Motocicleta> estoqueMotocicletas) {
-        this.estoqueMotocicletas = estoqueMotocicletas;
     }
 }

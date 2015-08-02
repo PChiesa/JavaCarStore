@@ -7,6 +7,7 @@ public abstract class Veiculo {
 
     //Atributos
     private int id;
+    private TipoVeiculo tipoVeiculo;
     private String chassi;
     private String modelo;
     private String cor;
@@ -14,6 +15,13 @@ public abstract class Veiculo {
     private String cambio;
     private float preco;
 
+    public TipoVeiculo getTipoVeiculo() {
+        return tipoVeiculo;
+    }
+
+    public void setTipoVeiculo(TipoVeiculo tipoVeiculo) {
+        this.tipoVeiculo = tipoVeiculo;
+    }
 
     //Gets e Sets
     public int getId() {
@@ -71,4 +79,5 @@ public abstract class Veiculo {
     public void setPreco(float preco) {
         this.preco = preco;
     }
+
 }

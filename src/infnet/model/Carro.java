@@ -9,6 +9,19 @@ public class Carro extends Veiculo {
     private String tipo;
     private float motorizacao;
 
+    //Construtor
+    public Carro(int id, String chassi, String modelo, String cor, String montadora, String cambio, float preco, String tipo, float motorizacao) {
+        this.setTipoVeiculo(TipoVeiculo.CARRO);
+        this.setId(id);
+        this.setChassi(chassi);
+        this.setModelo(modelo);
+        this.setCor(cor);
+        this.setMontadora(montadora);
+        this.setCambio(cambio);
+        this.setPreco(preco);
+        this.tipo = tipo;
+        this.motorizacao = motorizacao;
+    }
 
     //Gets e Sets
     public String getTipo() {
@@ -25,5 +38,18 @@ public class Carro extends Veiculo {
 
     public void setMotorizacao(float motorizacao) {
         this.motorizacao = motorizacao;
+    }
+
+    @Override
+    public String toString() {
+        return "Carro: " + this.getId() + "\n" +
+                "Chassi=" + this.getChassi() + "\n" +
+                "Modelo=" + this.getModelo() + "\n" +
+                "Cor=" + this.getCor() + "\n" +
+                "Montadora=" + this.getMontadora() + "\n" +
+                "Cambio=" + this.getCambio() + "\n" +
+                "Preco=" + this.getPreco() + "\n" +
+                "Tipo=" + this.getTipo() + "\n" +
+                "Motorizacao=" + this.getMotorizacao();
     }
 }
