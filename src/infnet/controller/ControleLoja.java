@@ -3,6 +3,7 @@ package infnet.controller;
 import infnet.model.Carro;
 import infnet.model.Loja;
 import infnet.model.Motocicleta;
+import infnet.model.Veiculo;
 
 import java.io.BufferedWriter;
 import java.io.IOException;
@@ -26,7 +27,12 @@ public class ControleLoja {
         this.loja = loja;
     }
 
-    //Metodos
+    /*
+    *****************************************************
+    * Metodos publicos
+    *****************************************************
+    * */
+
     public boolean adicionarCarro(Carro c) {
         try {
             this.loja.getEstoqueCarros().add(c);
@@ -88,20 +94,83 @@ public class ControleLoja {
         return true;
     }
 
-    public ArrayList<String> recuperarEstoque(Loja l) {
+    public boolean recuperarEstoqueCarros(Loja l) {
         ArrayList<String> estoque = new ArrayList<>();
         try (Stream<String> stream = Files.lines(Paths.get("src/estoque.txt"))) {
             stream
-                    .filter(x-> !x.contains("-"))
+                    .filter(x -> !x.contains("-"))// "-" faz a separacao dos carros no arquivo .txt
                     .forEach(estoque::add);
-                return estoque;
-        }catch (IOException e){
+
+        } catch (IOException e) {
             System.out.println("Arquivo de estoque nao encontrado");
+            return false;
         }
-        return null;
+        l.getEstoqueCarros().clear();//Limpa o estoque em memoria para substitui-lo pelo estoque do arquivo .txt
+        this.converterEstoqueCarros(estoque);
+        return true;
     }
 
-    //Gets
+
+    /*
+    *****************************************************
+    * Metodos privados
+    *****************************************************
+    * */
+
+    /**
+     * Faz a conversao de um ArrayList de String para um ArrayList de Carro
+     *
+     * @return void
+     * */
+    private void converterEstoqueCarros(ArrayList<String> e) {
+
+        /*
+        * Como cada carro possui 9 atributos, podemos saber o numero de
+        * carros no ArrayList<String> dividindo o tamanho dele por 9 e
+        * entao passar por cada item convertendo a String para a
+        * determinada classe do atributo.
+        * */
+        for (int i = 0; i < e.size() / 9; i++) {
+            int z = i * 9;
+            //Remocao do \n de cada linha
+            int id = Integer.parseInt(e.get(0 + z).replace("\n", ""));
+            String chassi = e.get(1 + z).replace("\n", "");
+            String modelo = e.get(2 + z).replace("\n", "");
+            String cor = e.get(3 + z).replace("\n", "");
+            String montadora = e.get(4 + z).replace("\n", "");
+            String cambio = e.get(5 + z).replace("\n", "");
+            Float preco = Float.parseFloat(e.get(6 + z).replace("\n", ""));
+            String tipo = e.get(7 + z).replace("\n", "");
+            Float motorizacao = Float.parseFloat(e.get(8 + z).replace("\n", ""));
+
+            //Populando o estoque
+            this.getLoja().getEstoqueCarros()
+                    .add(
+                            new Carro(
+                                    id,
+                                    chassi,
+                                    modelo,
+                                    cor,
+                                    montadora,
+                                    cambio,
+                                    preco,
+                                    tipo,
+                                    motorizacao));
+        }
+    }
+
+
+    /*
+    *****************************************************
+    * Gets e Sets
+    *****************************************************
+    * */
+
+    /**
+     * Retorna a loja da instancia do ControleLoja
+     *
+     * @return loja
+     */
     public Loja getLoja() {
         return loja;
     }
