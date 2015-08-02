@@ -1,5 +1,6 @@
 package infnet.model;
 
+
 /**
  * Created by Pedro on 31/07/15.
  */
@@ -42,7 +43,16 @@ public class Carro extends Veiculo {
 
     @Override
     public String toString() {
-        return "Carro: " + this.getId() + "\n" +
+        return  this.getId() + "\n" +
+                this.getChassi() + "\n" +
+                this.getModelo() + "\n" +
+                this.getCor() + "\n" +
+                this.getMontadora() + "\n" +
+                this.getCambio() + "\n" +
+                this.getPreco() + "\n" +
+                this.getTipo() + "\n" +
+                this.getMotorizacao()+"\n-\n";
+        /*return "Carro=" + this.getId() + "\n" +
                 "Chassi=" + this.getChassi() + "\n" +
                 "Modelo=" + this.getModelo() + "\n" +
                 "Cor=" + this.getCor() + "\n" +
@@ -50,6 +60,6 @@ public class Carro extends Veiculo {
                 "Cambio=" + this.getCambio() + "\n" +
                 "Preco=" + this.getPreco() + "\n" +
                 "Tipo=" + this.getTipo() + "\n" +
-                "Motorizacao=" + this.getMotorizacao();
+                "Motorizacao=" + this.getMotorizacao()+"\n\n";*/
     }
 }
