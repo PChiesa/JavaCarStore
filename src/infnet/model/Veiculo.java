@@ -1,7 +1,7 @@
 package infnet.model;
 
 /**
- * Created by Pedro on 31/07/15.
+ * Class abstrata generica de veiculos
  */
 public abstract class Veiculo {
 

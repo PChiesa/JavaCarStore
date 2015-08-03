@@ -2,7 +2,7 @@ package infnet.model;
 
 
 /**
- * Created by Pedro on 31/07/15.
+ * Entidade carro
  */
 public class Carro extends Veiculo {
 
@@ -52,14 +52,5 @@ public class Carro extends Veiculo {
                 this.getPreco() + "\n" +
                 this.getTipo() + "\n" +
                 this.getMotorizacao()+"\n-\n";
-        /*return "Carro=" + this.getId() + "\n" +
-                "Chassi=" + this.getChassi() + "\n" +
-                "Modelo=" + this.getModelo() + "\n" +
-                "Cor=" + this.getCor() + "\n" +
-                "Montadora=" + this.getMontadora() + "\n" +
-                "Cambio=" + this.getCambio() + "\n" +
-                "Preco=" + this.getPreco() + "\n" +
-                "Tipo=" + this.getTipo() + "\n" +
-                "Motorizacao=" + this.getMotorizacao()+"\n\n";*/
     }
 }

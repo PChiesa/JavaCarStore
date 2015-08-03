@@ -3,7 +3,7 @@ package infnet.model;
 import java.util.ArrayList;
 
 /**
- * Created by Pedro on 31/07/15.
+ * Entidade loja
  */
 public class Loja {
 

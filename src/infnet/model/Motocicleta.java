@@ -1,7 +1,7 @@
 package infnet.model;
 
 /**
- * Created by Pedro on 31/07/15.
+ * Entidade motocicleta
  */
 public class Motocicleta extends Veiculo {
 
@@ -39,5 +39,18 @@ public class Motocicleta extends Veiculo {
 
     public void setTanque(int tanque) {
         this.tanque = tanque;
+    }
+
+    @Override
+    public String toString() {
+        return  this.getId() + "\n" +
+                this.getChassi() + "\n" +
+                this.getModelo() + "\n" +
+                this.getCor() + "\n" +
+                this.getMontadora() + "\n" +
+                this.getCambio() + "\n" +
+                this.getPreco() + "\n" +
+                this.getCilindrada() + "\n" +
+                this.getTanque()+"\n-\n";
     }
 }

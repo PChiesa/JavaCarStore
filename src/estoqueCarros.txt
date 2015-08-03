@@ -1,4 +1,4 @@
-3
+1
 chassi1
 Gol
 Branco
@@ -8,7 +8,7 @@ Manual
 Hatch
 1.0
 -
-4
+2
 chassi2
 Fox
 Preto

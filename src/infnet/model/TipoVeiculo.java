@@ -1,7 +1,7 @@
 package infnet.model;
 
 /**
- * Created by Pedro on 01/08/15.
+ * Enum para os tipos possiveis de veiculos
  */
 public enum TipoVeiculo {
     CARRO, MOTOCICLETA
